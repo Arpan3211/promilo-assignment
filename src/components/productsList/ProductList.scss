@@ -1,0 +1,112 @@
+.product-header {
+  color: rgb(0, 132, 255);
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .product-card {
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+
+    @media screen and (max-width: 768px) {
+      width: calc(50% - 20px);
+    }
+
+    @media screen and (max-width: 480px) {
+      width: 100%;
+    }
+
+    img {
+      width: 40%;
+      max-height: 200px;
+      object-fit: cover;
+      padding: 20px;
+    }
+
+    .product-info {
+      padding: 15px;
+      background-color: #e7e3e3;
+      border: 1px solid #000000;
+      border-radius: 10px;
+      font-family: "Times New Roman", Times, serif;
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+      }
+
+      p {
+        color: #555;
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+
+.product-container {
+  text-align: center;
+}
+
+.product-header {
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.product-searchBar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+
+  label {
+    width: 100%;
+    color: #494949;
+    margin: 10px;
+    font-size: 25px;
+    padding-bottom: 0;
+    font-family: "Times New Roman", Times, serif;
+  }
+
+  input {
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    width: 50%;
+    margin: 10px;
+    transition: border-color 0.3s;
+
+    &:hover,
+    &:focus {
+      border-color: #007bff;
+    }
+  }
+
+  .search-button {
+    padding: 8px 15px;
+    background-color: #c3ddfa;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: #007bff;
+      color: #ffffff;
+    }
+  }
+}

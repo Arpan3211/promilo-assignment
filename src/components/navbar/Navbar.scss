@@ -1,0 +1,121 @@
+// Navbar.scss
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #03c4ff;
+  position: relative;
+  // z-index: 100;
+  border-radius: 10px;
+
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    img {
+      height: 60px;
+      margin-left: 10px;
+    }
+
+    .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: rgb(0, 0, 0);
+      display: none;
+
+      &:hover {
+        color: #000000;
+      }
+    }
+  }
+
+  .nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    .nav-item {
+      margin-left: 20px;
+
+      .nav-link {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+        font-size: 20px;
+        margin-right: 40px;
+        position: relative;
+        &:hover {
+          color: #000000;
+          text-shadow: 5px 5px 5px rgba(110, 107, 107, 0.5);
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background-color: #ff0000;
+          transition: width 0.3s ease;
+        }
+
+        &:hover:before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .navbar-container {
+      .menu-icon {
+        display: block;
+      }
+
+      .nav-menu {
+        flex-direction: column;
+        background-color: #03c4ff;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 40%;
+        height: 80%;
+        border: 2px solid rgb(176, 233, 250);
+        border-radius: 10px;
+        align-items: flex-start;
+        margin: 15px;
+        display: none;
+
+        &.nav-menu-active {
+          display: flex;
+        }
+
+        .nav-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin: 10px;
+          padding: 10px;
+
+          Link {
+            padding: 10px;
+          }
+        }
+        .nav-link {
+          text-decoration: none;
+          color: rgb(0, 0, 0);
+          font-weight: bold;
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
