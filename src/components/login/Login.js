@@ -1,4 +1,4 @@
-// src/components/Login.js
+
 import React, { useState } from 'react';
 import axios from 'axios';
 import { SHA256 } from 'crypto-js';
@@ -38,13 +38,13 @@ const Login = () => {
             // Convert password to sha256 format using crypto-js library
             const sha256Password = SHA256(password).toString();
 
-            // Create FormData object and append login credentials
+           
             const formData = new FormData();
             formData.append('username', email);
             formData.append('password', sha256Password);
             formData.append('grant_type', 'password');
 
-            // Make a POST request to the login API with the authorization header
+           
             const response = await axios.post(
                 'https://apiv2stg.promilo.com/user/oauth/token',
                 formData,
@@ -55,15 +55,14 @@ const Login = () => {
                 }
             );
 
-            // Handle successful login
+          
             console.log('Login successful', response.data);
 
             sessionStorage.setItem('accessToken', response.data.response.access_token);
 
-            // Redirect to the product list page
+           
             navigation('/product-list');
         } catch (error) {
-            // Handle login error
             console.error('Login error', error);
             setError('Invalid email or password');
         }

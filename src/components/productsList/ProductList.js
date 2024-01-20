@@ -1,31 +1,30 @@
-// src/components/ProductList.js
+
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './ProductList.scss'; // Import the SCSS file
+import './ProductList.scss'; 
 
 const ProductList = () => {
-    const [allProducts, setAllProducts] = useState([]); // Store all products
-    const [displayedProducts, setDisplayedProducts] = useState([]); // Store filtered products for display
+    const [allProducts, setAllProducts] = useState([]); 
+    const [displayedProducts, setDisplayedProducts] = useState([]); 
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {
-        // Fetch the product list from the API
         const fetchProductList = async () => {
             try {
-                // Retrieve the access token from sessionStorage
+               
                 const accessToken = sessionStorage.getItem('accessToken');
 
-                // Make a GET request to the product list API with the access token as a header
+               
                 const response = await axios.get(
                     'https://api.kalpav.com/api/v1/product/category/retail',
                     {
                         headers: {
-                            'Authorization': accessToken // Use the access token directly
+                            'Authorization': accessToken 
                         }
                     }
                 );
 
-                // Set both allProducts and displayedProducts initially
+                
                 setAllProducts(response.data.response);
                 setDisplayedProducts(response.data.response);
             } catch (error) {
@@ -34,16 +33,14 @@ const ProductList = () => {
         };
 
         fetchProductList();
-    }, []); // The empty dependency array ensures that this effect runs only once on component mount
+    }, []); 
 
     const handleSearch = () => {
-        // Filter the products based on the searchTerm using case-insensitive regular expression
         const regex = new RegExp(searchTerm, 'i');
         const filteredProducts = allProducts.filter((product) =>
             regex.test(product.productCategory.productCategoryName)
         );
 
-        // Set the filtered products in the state
         setDisplayedProducts(filteredProducts);
     };
 
@@ -52,7 +49,7 @@ const ProductList = () => {
     };
 
     const handleKeyPress = (e) => {
-        // Handle search when the user presses Enter
+       
         if (e.key === 'Enter') {
             handleSearch();
         }

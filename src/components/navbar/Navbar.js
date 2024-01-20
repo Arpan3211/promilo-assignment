@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'; // Assuming you use React Router
-import { FaBars, FaTimes } from 'react-icons/fa'; // Assuming you use react-icons for icons
+import { Link } from 'react-router-dom'; 
+import { FaBars, FaTimes } from 'react-icons/fa';
 import './Navbar.scss';
 import logo from "../../promilo-logo.png"
 

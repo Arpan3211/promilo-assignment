@@ -1,4 +1,4 @@
-// src/components/AboutPage.js
+
 import React from 'react';
 import './About.scss';
 
