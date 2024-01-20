@@ -68,7 +68,7 @@ const AboutPage = () => {
                 To start the project, follow these steps:
             </p>
             <ol>
-                <li>Clone the repository: <code>git clone [repository-url]</code></li>
+                <li>Clone the repository: <code>git clone [ https://github.com/Arpan3211/promilo-assignment.git ]</code></li>
                 <li>Install dependencies: <code>npm install</code></li>
                 <li>Start the development server: <code>npm start</code></li>
                 <li>Open your browser and navigate to <code>http://localhost:3000</code></li>
